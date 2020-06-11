@@ -17,7 +17,7 @@ public class TestGenerateApiKey extends DefaultTest {
     private MainPage mainPage;
     private ApiKeysTab apiKeysTab;
     private SoftAssert softAssert;
-
+//TODO initialize variables in context interface
     @BeforeClass
     public void preconditions() {
         loginPage = new LoginPage(driver);

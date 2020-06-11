@@ -59,14 +59,8 @@ public class ApiKeysTab extends DefaultPage {
 
     /* TXT FILE HANDLING METHODS */
     public void writeToApiKeyTxt(String apiKey) throws IOException {
-        BufferedWriter writer = new BufferedWriter(new FileWriter("src/test/java/utils/apiKey/apiKey.txt"));
+        BufferedWriter writer = new BufferedWriter(new FileWriter("src/test/java/utils/api/apiKey.txt"));
         writer.write(apiKey);
         writer.close();
-    }
-
-    public String readFromApiKeyTxt() throws IOException {
-        File file = new File("src/test/java/utils/apiKey/apiKey.txt");
-        BufferedReader br = new BufferedReader(new FileReader(file));
-        return br.readLine();
     }
 }
