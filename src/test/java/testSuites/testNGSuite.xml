@@ -1,0 +1,23 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name = "Suite">
+    <test name = "generateApiKey">
+        <classes>
+            <class name = "tests.uiTests.TestGenerateApiKey" />
+        </classes>
+    </test>
+
+    <test name = "testApiKey">
+        <classes>
+            <class name = "tests.apiTests.TestApi" />
+        </classes>
+    </test>
+
+    <test name = "testReturnedJsonBody">
+        <classes>
+            <class name = "tests.apiTests.TestReturnedJsonBody" />
+        </classes>
+    </test>
+
+</suite>

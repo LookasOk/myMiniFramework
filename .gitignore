@@ -1,1 +1,5 @@
 test_output/*
+test-output/*
+target/surefire-reports/*
+target/maven-status/*
+target/generated-test-sources/*

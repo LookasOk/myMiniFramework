@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public abstract class DefaultPage {
 	protected WebDriver driver;
-	protected  static WebDriverWait wait;
+	protected static WebDriverWait wait;
 
 	public DefaultPage(WebDriver driver) {
 		this.driver = driver;

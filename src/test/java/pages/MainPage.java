@@ -15,4 +15,8 @@ public class MainPage extends DefaultPage {
     public void getTabByName(String name) {
         driver.findElement(By.xpath("//a[contains(text(), '" + name + "')]")).click();
     }
+
+    public boolean validateLogin() {
+        return driver.findElement(By.xpath("//*[contains(text(), 'Signed in successfully.')]")).isDisplayed();
+    }
 }

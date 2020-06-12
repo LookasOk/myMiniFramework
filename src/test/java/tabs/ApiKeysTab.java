@@ -54,5 +54,4 @@ public class ApiKeysTab extends DefaultPage {
         return driver.findElement(By.xpath("//table[@class='material_table api-keys']/tbody/tr[" + rowNumber + "]/td[1]")).getText();
     }
 
-
 }
