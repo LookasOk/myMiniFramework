@@ -10,6 +10,8 @@ import tabs.ApiKeysTab;
 
 import java.io.IOException;
 
+import static utils.api.ApiUtils.writeToApiKeyTxt;
+import static utils.constants.UiConstants.API_KEYS_TAB;
 import static utils.testData.RandomTdGenerator.randomTd4;
 
 public class TestGenerateApiKey extends DefaultTest {
@@ -17,7 +19,8 @@ public class TestGenerateApiKey extends DefaultTest {
     private MainPage mainPage;
     private ApiKeysTab apiKeysTab;
     private SoftAssert softAssert;
-//TODO initialize variables in context interface
+
+    //TODO initialize variables in context interface
     @BeforeClass
     public void preconditions() {
         loginPage = new LoginPage(driver);
@@ -32,7 +35,7 @@ public class TestGenerateApiKey extends DefaultTest {
         softAssert.assertTrue(driver.findElement(By.xpath("//*[contains(text(), 'Signed in successfully.')]")).isDisplayed(),
                 "Sign in was not successful");
 
-        mainPage.getTabByName("API keys");
+        mainPage.getTabByName(API_KEYS_TAB);
 
         int apiKeyCount = apiKeysTab.getApiTableRowCount();
         String apiName = randomTd4();
@@ -44,7 +47,7 @@ public class TestGenerateApiKey extends DefaultTest {
         softAssert.assertNotEquals(apiKeysTab.getApiName(apiKeyCount + 1), apiName, "API name was'nt changed");
         softAssert.assertAll();
 
-        apiKeysTab.writeToApiKeyTxt(apiKeysTab.getApiKey(apiKeyCount + 1));
+        writeToApiKeyTxt(apiKeysTab.getApiKey(apiKeyCount + 1));
     }
 
 

@@ -25,8 +25,8 @@ public class LoginPage extends DefaultPage {
 
     /* OTHER METHODS */
     public void login() {
-        enterEmailField.sendKeys("lokunauskas@eisgroup.com");
-        passwordField.sendKeys("password");
+        enterEmailField.sendKeys("");
+        passwordField.sendKeys("");
         buttonLogin.click();
     }
 

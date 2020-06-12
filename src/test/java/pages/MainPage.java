@@ -7,10 +7,6 @@ import org.openqa.selenium.support.FindBy;
 
 public class MainPage extends DefaultPage {
 
-    /* TABS */
-    @FindBy(xpath = "//a[contains(text(), 'API keys')]")
-    private WebElement apiKeysTab;
-
     public MainPage(WebDriver driver) {
         super(driver);
     }

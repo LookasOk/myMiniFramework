@@ -5,21 +5,27 @@ import io.restassured.http.ContentType;
 import io.restassured.parsing.Parser;
 import io.restassured.response.Response;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 
 import static io.restassured.RestAssured.given;
 
-public class apiUtils {
+public class ApiUtils {
+
+    /* TXT FILE HANDLING METHODS */
+    public static void writeToApiKeyTxt(String apiKey) throws IOException {
+        BufferedWriter writer = new BufferedWriter(new FileWriter("src/test/java/utils/testData/apiKey.txt"));
+        writer.write(apiKey);
+        writer.close();
+    }
 
     public static String readFromApiKeyTxt() throws IOException {
-        File file = new File("src/test/java/utils/api/apiKey.txt");
+        File file = new File("src/test/java/utils/testData/apiKey.txt");
         BufferedReader br = new BufferedReader(new FileReader(file));
         return br.readLine();
     }
 
+
+    /* API RESPONSE HANDLING */
     public static Response doGetRequest(String endpoint) {
         RestAssured.defaultParser = Parser.JSON;
 

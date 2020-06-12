@@ -6,9 +6,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import pages.DefaultPage;
 
-import java.io.*;
-
-
 public class ApiKeysTab extends DefaultPage {
 
     /* TEXT FIELDS */
@@ -57,10 +54,5 @@ public class ApiKeysTab extends DefaultPage {
         return driver.findElement(By.xpath("//table[@class='material_table api-keys']/tbody/tr[" + rowNumber + "]/td[1]")).getText();
     }
 
-    /* TXT FILE HANDLING METHODS */
-    public void writeToApiKeyTxt(String apiKey) throws IOException {
-        BufferedWriter writer = new BufferedWriter(new FileWriter("src/test/java/utils/api/apiKey.txt"));
-        writer.write(apiKey);
-        writer.close();
-    }
+
 }
