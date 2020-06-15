@@ -7,6 +7,10 @@
 ## General info
 ### MyMiniFramework
 Selenium, Rest Assured based framework.
+
+###### TestGenerateApiKey.java - test runs a simple scenario of logging in, creating an API key and then changing it's name.  
+###### TestApi.java - tests a couple of positive / negative test flows of the created API checking returned values and response codes.
+###### TestReturnedJsonBody.java - Checks returned Json body against schema provided
 	
 ## Technologies
 Project is created with:
