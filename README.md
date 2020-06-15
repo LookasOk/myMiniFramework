@@ -6,7 +6,7 @@
 
 ## General info
 ### MyMiniFramework
-Selenium, Rest Assured based framework
+Selenium, Rest Assured based framework.
 	
 ## Technologies
 Project is created with:
@@ -25,8 +25,8 @@ add your login credentials at these lines:
 28. enterEmailField.sendKeys("Your email");  
 29. passwordField.sendKeys("Your password");
 ```
-At the moment there is a valid api key saved at src/test/java/utils/testData/apiKey.txt. How ever if the api key doesn't work
-a new one will be generated and saved to apiKey.txt after running TestGenerateApiKey.java. Newly created key wont't work
+At the moment there is a valid api key saved at src/test/java/utils/testData/apiKey.txt. However if the api key doesn't work
+a new one will be generated and saved to apiKey.txt after running TestGenerateApiKey.java. A newly created key wont't work
 for some time (up to 10 minutes).  
 While api key at apiKey.txt is not active tests: TestApi.java and TestReturnedJsonBody.java will fail.
 
