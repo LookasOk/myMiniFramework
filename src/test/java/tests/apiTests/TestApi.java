@@ -1,17 +1,10 @@
 package tests.apiTests;
 
 import io.restassured.response.Response;
-import org.everit.json.schema.ValidationException;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
-import org.everit.json.schema.Schema;
-import org.everit.json.schema.loader.SchemaLoader;
-import org.json.JSONObject;
-import org.json.JSONTokener;
 
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
 
 import static utils.api.ApiUtils.*;
 import static utils.constants.ApiConstants.*;
@@ -26,6 +19,7 @@ public class TestApi {
         String apiBeverlyHills = String.format(API_ZIP_CODE, BEVERLY_HILLS_ZIP_CODE, readFromApiKeyTxt());
         String badApi = String.format(API_CITY_ID, VILNIUS_CITY_ID, "12345");
 
+        //this method waits for the api key that's just been generated to activate ( can take up to 10 minutes)
 //        waitForApiToActivate();
 
         Response responseVilnius = doGetRequest(apiVilnius);
@@ -36,10 +30,10 @@ public class TestApi {
         double londonHumidity = ((Number) responseLondon.jsonPath().getMap(MAIN).get(HUMIDITY)).doubleValue();
 
         softAssert.assertTrue(vilniusTemp > 100.00, "Temp at this time of the year should be more then 10 degrees celsius");
-        softAssert.assertTrue(londonHumidity > 0, "Humidity in London is always more then 0");
-        softAssert.assertEquals(responseBeverlyHills.jsonPath().getString("name"), "Beverly Hills");
+        softAssert.assertTrue(londonHumidity > 0, "Humidity in London is always more then 0 :D");
+        softAssert.assertEquals(responseBeverlyHills.jsonPath().getString("name"), "Beverly Hills"
+                , "Name should be Beverly Hills");
         softAssert.assertNotEquals(doGetRequest(badApi).getStatusCode(), 200, "Response code of an unsuccessful api call should not be 200");
-        softAssert.assertNotEquals(responseVilnius.getStatusCode(), 200, "Test of a negative test flow (it actually passed:)");
         softAssert.assertAll();
 
     }

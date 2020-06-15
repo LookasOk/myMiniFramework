@@ -13,7 +13,7 @@ public class TestGenerateApiKey extends BaseUiTest {
 
 
     @Test
-    public void test() throws IOException {
+    public void testGenerateApiKey() throws IOException {
         loginPage.login();
         softAssert.assertTrue(mainPage.validateLogin(), "Sign in was not successful");
 
@@ -29,7 +29,7 @@ public class TestGenerateApiKey extends BaseUiTest {
         softAssert.assertNotEquals(apiKeysTab.getApiName(apiKeyCount + 1), apiName, "API name was'nt changed");
         softAssert.assertAll();
 
-        //check if api saved in apiKey.txt is active and if not overwrite with the one that's been just generated (new api won't work for up to 10 minutes)
+        //check if api saved in apiKey.txt is active and if not overwrite with the one that's just been generated (new api won't work for up to 10 minutes)
         if (!isCurrentApiActive()) writeToApiKeyTxt(apiKeysTab.getApiKey(apiKeyCount + 1));
     }
 
